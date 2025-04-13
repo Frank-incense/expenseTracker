@@ -1,0 +1,25 @@
+form{
+    width: 100%;
+    border: 1px solid;
+    border-radius: 20px;
+    text-align: left;
+}
+
+form input{
+    width: 90%;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 5px;
+}
+form div:first-of-type{
+    margin-top: 10px;
+}
+form div h2{
+    font-size: 2.2em;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+form div p{
+    padding-left: 10px;
+}

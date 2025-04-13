@@ -1,0 +1,22 @@
+aside{
+    text-align: left;
+}
+aside table.table{
+    border-radius: 25px;
+    padding: 5px;
+}
+
+input{
+    margin: 10px 0;
+    padding: 2px;
+    width: 300px;
+    border-radius: 10px;
+}
+thead{
+    background-color: black;
+    color: whitesmoke;
+}
+th{
+    padding: 5px;
+    padding-left: 10px;
+}
