@@ -1,8 +1,22 @@
 import "./Table.css"
-function Search(){
+import { useState } from "react"
+
+function Search({onSearch}){
+    const [searchTerm, setSearchTerm] = useState("")
+
+    function handleSearch(e){
+        onSearch(searchTerm)
+        setSearchTerm(e.target.value)
+    }
+
     return(
         <>
-        <input type="text" name="search" id="search" />
+            <input 
+            type="search" 
+            name="search" 
+            id="search" 
+            value={searchTerm}
+            onChange={handleSearch} />
         </>
     )
 }

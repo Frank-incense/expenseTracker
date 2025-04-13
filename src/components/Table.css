@@ -12,7 +12,7 @@ input{
     width: 300px;
     border-radius: 10px;
 }
-thead{
+thead tr{
     background-color: black;
     color: whitesmoke;
 }

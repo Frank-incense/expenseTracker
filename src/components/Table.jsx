@@ -1,18 +1,19 @@
 import Search from "./Search"
 import "./Table.css"
 
-function Table({expenses}){
-    console.log(expenses)
+function Table({expenses, handleSearch}){
     return(
     <aside className="col">
-        <Search/>
-        <table className="table">
+        <Search onSearch={handleSearch}/>
+        <table className="table table-striped">
             <thead>
-                <td>Expense</td>
-                <td>Description</td>
-                <td>Category</td>
-                <td>Amount</td>
-                <td>Date</td>
+                <tr>
+                    <td>Expense</td>
+                    <td>Description</td>
+                    <td>Category</td>
+                    <td>Amount</td>
+                    <td>Date</td>
+                </tr>
             </thead>
             <tbody>
                 {/* Add rows */}
