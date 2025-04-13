@@ -18,9 +18,7 @@ function App() {
       <section className='row align-items-start'>
         <Form className="col" onFormSubmit={handleSubmit}/>
         <Table className="col" expenses={expenses}/>
-      </section>
-      
-      
+      </section>   
     </ main>
   )
 }
