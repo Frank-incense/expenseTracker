@@ -7,11 +7,11 @@ function Table(){
         <Search/>
         <table className="table">
             <thead>
-                <th>Expense</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Amount</th>
-                <th>Date</th>
+                <td>Expense</td>
+                <td>Description</td>
+                <td>Category</td>
+                <td>Amount</td>
+                <td>Date</td>
             </thead>
             <tbody>
                 {/* Add rows */}
