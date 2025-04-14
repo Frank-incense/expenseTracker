@@ -38,27 +38,54 @@ const EX = [
   }
 ]
 function App() {
-  const [expenses, setExpenses] = useState(EX)
+  const [expenses, setExpenses] = useState(EX);
   
   function handleSubmit(newExpense){
     setExpenses([...expenses,newExpense])
-    
   }
   
   function handleSearch(search){
+    console.log()
     const filteredExpense = EX.filter(expense=>{
       if(expense.expense.toLowerCase().includes(search.toLowerCase())) return true;
       // else return expense
     })
     setExpenses(filteredExpense)
   }
-  
+
+  function handleDelete(id){
+    const updatedExpenses = expenses.filter(expense=>{
+      return expense.id !== id
+    })
+    setExpenses(updatedExpenses)
+  }
+
+  function handleSort(sortby){
+    console.log(sortby)
+    if (sortby === "A-Z"){
+      const sortedExpense = expenses.sort((a,b)=>a.category.localeCompare(b.category))
+      setExpenses([...sortedExpense])
+    }
+    else if (sortby === "0-100"){
+      const sortedExpense = expenses.sort((a,b)=>a.amount-b.amount)
+      setExpenses([...sortedExpense])
+    }
+    else if (sortby === "Z-A"){
+      const sortedExpense = expenses.sort((a,b)=>b.category.localeCompare(a.category))
+      setExpenses([...sortedExpense])
+    }
+  }
+
   return (
     <main>
       <Header/>
       <section className='row align-items-start'>
-        <Form className="col" onFormSubmit={handleSubmit}/>
-        <Table className="col" expenses={expenses} handleSearch={handleSearch}/>
+        <Form  onFormSubmit={handleSubmit}/>
+        <Table 
+        expenses={expenses} 
+        handleSearch={handleSearch} 
+        onDelete={handleDelete}
+        handleChange={handleSort}/>
       </section>   
     </ main>
   )

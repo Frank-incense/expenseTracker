@@ -1,10 +1,10 @@
 import Search from "./Search"
 import "./Table.css"
 
-function Table({expenses, handleSearch}){
+function Table({expenses, handleSearch, onDelete, handleChange}){
     return(
     <aside className="col">
-        <Search onSearch={handleSearch}/>
+        <Search onSearch={handleSearch} handleChange={handleChange}/>
         <table className="table table-striped">
             <thead>
                 <tr>
@@ -13,6 +13,7 @@ function Table({expenses, handleSearch}){
                     <td>Category</td>
                     <td>Amount</td>
                     <td>Date</td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +25,7 @@ function Table({expenses, handleSearch}){
                         <td>{expense.category}</td>
                         <td>{expense.amount}</td>
                         <td>{expense.date}</td>
+                        <td><button onClick={()=>onDelete(expense.id)}>Delete</button></td>
                     </tr>
                 })}
             </tbody>

@@ -1,10 +1,10 @@
 import {useState} from "react";
+import { v4 as uuid } from "uuid";
 import './Form.css'
 
-function Form({onFormSubmit}){
-    let id = 0 
+function Form({onFormSubmit}){ 
     const [formdata, setformdata] = useState({
-        id: id,
+        id: uuid(),
         expense:"",
         detail:"",
         category:"",
@@ -22,9 +22,8 @@ function Form({onFormSubmit}){
       function handleFormSubmit(e){
         e.preventDefault()
         onFormSubmit(formdata)
-        id += 1;
         setformdata({
-            id: id,
+            id: uuid(),
             expense:"",
             detail:"",
             category:"",
